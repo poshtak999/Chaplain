@@ -11,11 +11,15 @@
   "dependencies": {
     "expo": "~51.0.14",
     "expo-status-bar": "~1.12.1",
+    "nativewind": "^2.0.11",
     "react": "18.2.0",
-    "react-native": "0.74.2"
+    "react-native": "0.74.2",
+    "tailwind-rn": "^4.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@biomejs/biome": "1.8.3",
+    "tailwindcss": "^3.3.2"
   },
   "private": true
 }
