@@ -2,12 +2,15 @@ import { Button, SafeAreaView, Text, View, Alert } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { TailwindProvider } from "tailwind-rn";
-
-export default function App() {
+import "tailwindcss/tailwind.css";
+export default function Header() {
   return (
-    <SafeAreaView className="flex-1 items-center justify-between bg-[#81613c]">
       
-      <StatusBar style="light" />
-    </SafeAreaView>
+      <View className="w-full">
+        <Text className="text-gray-50 text-center text-4xl">Chaplain+</Text>
+        <StatusBar style="light" />
+      </View>
+      
+
   );
 }
