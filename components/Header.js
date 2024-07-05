@@ -1,16 +1,16 @@
-import { Button, SafeAreaView, Text, View, Alert } from "react-native";
 import React from "react";
+import { Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { TailwindProvider } from "tailwind-rn";
+
 import "tailwindcss/tailwind.css";
+
 export default function Header() {
   return (
-      
-      <View className="w-full">
-        <Text className="text-gray-50 text-center text-4xl">Chaplain+</Text>
-        <StatusBar style="light" />
-      </View>
-      
-
+    <View className="w-full">
+      <Text className="text-zinc-50 font-semibold text-center text-4xl">
+        Chaplain+
+      </Text>
+      <StatusBar style="light" />
+    </View>
   );
 }

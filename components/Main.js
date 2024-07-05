@@ -1,45 +1,48 @@
-import { SafeAreaView, Text, View } from "react-native";
-import React from "react";
+import { FlatList, Text, View, SafeAreaView, ScrollView } from "react-native";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import "tailwindcss/tailwind.css";
 
 export default function Main() {
+  const [cardItem, setCarItem] = useState([
+    {
+      title: "Розпізнавання та лікування ПТСР",
+      full: "Посттравматичний стресовий розлад (ПТСР) – це психічний стан, що може розвинутися після пережиття або свідкування трагічних подій, таких як війна, насильство, аварія або природні катастрофи. Люди з ПТСР можуть відчувати повторні флешбеки, нічні кошмари та сильну тривогу, яка заважає нормальному життю. Лікування ПТСР включає психотерапію, медикаменти та підтримку",
+      key: "1",
+    },
+    {
+      title: "ПТСР серед ветеранів: особливості та методи підтримки",
+      full: "Ветерани часто страждають від ПТСР через пережиті бойові дії та травматичні події на війні. Вони можуть відчувати ізоляцію, втрату інтересу до життя, роздратованість та депресію. Важливо забезпечити їм доступ до якісної медичної допомоги та психологічної підтримки. ",
+      key: "2",
+    },
+    {
+      title: "Вплив ПТСР на дітей та підлітків",
+      full: "Діти та підлітки також можуть страждати від ПТСР після пережиття травматичних подій, таких як насильство, знущання або втрата близької людини. Симптоми можуть включати страх, тривогу, проблеми зі сном та концентрацією, а також зміни в поведінці.",
+      key: "3",
+    },
+    {
+      title: "Як підтримати людину з ПТСР: поради для близьких",
+      full: "Підтримка від близьких людей є важливою складовою лікування ПТСР. Людина з цим розладом потребує розуміння, терпіння та емоційної підтримки. Важливо навчитися розпізнавати тригери та уникати ситуацій, що можуть викликати спогади про травму. ",
+      key: "4",
+    },
+  ]);
   return (
-    <View className="flex-1 pt-5">
-      <View className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-3">
-        <View className="px-6 py-4">
-          <Text className="font-bold text-xl mb-2">
-            тут буде допомога капеланам
-          </Text>
-          <Text className="text-gray-700 text-base">
-            Це приклад картки, створеної за допомогою Tailwind CSS.
-          </Text>
+    <SafeAreaView className="flex-1 items-center justify-between bg-[#81613c]">
+        <View>
+          <FlatList
+            data={cardItem}
+            renderItem={({ item }) => (
+              <View className="max-w-sm overflow-hidden shadow-lg bg-white m-3 rounded-2xl">
+                <View className="px-6 py-4">
+                  <Text className="font-bold text-xl mb-2">{item.title}</Text>
+                  <Text className="text-gray-700 text-base">{item.full}</Text>
+                </View>
+              </View>
+            )}
+          />
         </View>
-      </View>
-
-      <View className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-3">
-        <View className="px-6 py-4">
-          <Text className="font-bold text-xl mb-2">
-            тут буде допомога капеланам
-          </Text>
-          <Text className="text-gray-700 text-base">
-            Це приклад картки, створеної за допомогою Tailwind CSS.
-          </Text>
-        </View>
-      </View>
-
-      <View className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-3">
-        <View className="px-6 py-4">
-          <Text className="font-bold text-xl mb-2">
-            тут буде допомога капеланам
-          </Text>
-          <Text className="text-gray-700 text-base">
-            Це приклад картки, створеної за допомогою Tailwind CSS.
-          </Text>
-        </View>
-      </View>
 
       <StatusBar style="light" />
-    </View>
+    </SafeAreaView>
   );
 }
